@@ -36,18 +36,49 @@ suite('Functional Tests', function () {
       chai
         .request(server)
         .put('/travellers')
-
+        .send({
+          "surname": "Colombo",
+          "name": "Cristoforo"
+        })
         .end(function (err, res) {
-          assert.equal();
-
+          assert.equal(res.status, 200, 'response status should be 200');
+          assert.equal(res.type, 'application/json', 'Response should be json');
+          assert.equal(
+            res.body.name,
+            'Cristoforo',
+            'res.body.name should be "Christoforo"'
+          );
+          assert.equal(
+            res.body.surname,
+            'Colombo',
+            'res.body.surname should be "Colombo"'
+          );
           done();
         });
     });
     // #4
     test('Send {name: "Giovanni", surname: "da Verrazzano"}', function (done) {
-      assert.equal();
-
-      done();
+      chai
+        .request(server)
+        .put('/travellers')
+        .send({
+          "surname": "da Verrazzano",
+          "name": "Giovanni"
+        })
+        .end(function (err, res) {
+          assert.equal(res.status, 200, 'response status should be 200');
+          assert.equal(res.type, 'application/json', 'Response should be json');
+          assert.equal(
+            res.body.name,
+            'Giovanni',
+            'res.body.name should be "Giovanni"'
+          );
+          assert.equal(
+            res.body.surname,
+            'da Verrazzano',
+            'res.body.surname should be "da Verrazzano"'
+          );
+          done();
     });
   });
 });
@@ -62,6 +93,7 @@ suite('Functional Tests with Zombie.js', function () {
       assert.isNull(Browser.site);
     });
   });
+});
 
   suite('"Famous Italian Explorers" form', function () {
     // #5
@@ -70,11 +102,12 @@ suite('Functional Tests with Zombie.js', function () {
 
       done();
     });
+  });
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {
       assert.equal();
 
       done();
-    });
+
   });
 });
