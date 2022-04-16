@@ -15,7 +15,7 @@ suite('Unit Tests', function () {
       assert.isDefined('hello', 'A string is not undefined');
     });
     // #3
-    /*test('#isOk, #isNotOk', function () {
+    test('#isOk, #isNotOk', function () {
       assert.isNotOk(null, 'null is falsey');
       assert.isOk("I'm truthy", 'A string is truthy');
       assert.isOk(true, 'true is truthy');
@@ -25,12 +25,12 @@ suite('Unit Tests', function () {
       assert.isTrue(true, 'true is true');
       assert.isTrue(!!'double negation', 'Double negation of a truthy value is true');
       assert.isNotTrue({ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
-    });/*
+    });
   });
 
   // -----------------------------------------------------------------------------
 
-/*  suite('Equality', function () {
+  suite('Equality', function () {
     // #5
     test('#equal, #notEqual', function () {
       assert.equal(12, '12', 'Numbers are coerced into strings with ==');
@@ -162,7 +162,7 @@ suite('Unit Tests', function () {
       assert.instanceOf(airlinePlane, Object);
       assert.notInstanceOf(myCar.wheels, String);
     });
-  });*/
+  });
 
   // -----------------------------------------------------------------------------
 });
