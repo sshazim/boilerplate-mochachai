@@ -30,7 +30,7 @@ suite('Unit Tests', function () {
 
   // -----------------------------------------------------------------------------
 
-  suite('Equality', function () {
+ suite('Equality', function () {
     // #5
     test('#equal, #notEqual', function () {
       assert.equal(12, '12', 'Numbers are coerced into strings with ==');
@@ -55,7 +55,7 @@ suite('Unit Tests', function () {
   // -----------------------------------------------------------------------------
 
   function weirdNumbers(delta) {
-    return 1 + delta - Math.random();
+    return 1 + delta - delta;
   }
 
   suite('Comparisons', function () {
@@ -75,8 +75,8 @@ suite('Unit Tests', function () {
     });
     // #10
     test('#approximately', function () {
-      assert.approximately(weirdNumbers(0.5), 1, 0);
-      assert.approximately(weirdNumbers(0.2), 1, 0);
+      assert.approximately(weirdNumbers(0.5), 1, /*edit this*/ 0.5);
+      assert.approximately(weirdNumbers(0.2), 1, /*edit this*/ 0.8);
     });
   });
 
