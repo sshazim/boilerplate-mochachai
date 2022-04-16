@@ -30,7 +30,7 @@ suite('Unit Tests', function () {
 
   // -----------------------------------------------------------------------------
 
-  suite('Equality', function () {
+/*  suite('Equality', function () {
     // #5
     test('#equal, #notEqual', function () {
       assert.equal(12, '12', 'Numbers are coerced into strings with ==');
@@ -162,7 +162,7 @@ suite('Unit Tests', function () {
       assert.instanceOf(airlinePlane, Object);
       assert.notInstanceOf(myCar.wheels, String);
     });
-  });
+  });*/
 
   // -----------------------------------------------------------------------------
 });
