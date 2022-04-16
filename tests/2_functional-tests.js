@@ -32,7 +32,7 @@ suite('Functional Tests', function () {
         });
     });
     // #3
-    test('Send {surname: "Colombo"}', function (done) {
+    test('Send {name: "Cristoforo", surname: "Colombo"}', function (done) {
       chai
         .request(server)
         .put('/travellers')
@@ -44,7 +44,7 @@ suite('Functional Tests', function () {
         });
     });
     // #4
-    test('Send {surname: "da Verrazzano"}', function (done) {
+    test('Send {name: "Giovanni", surname: "da Verrazzano"}', function (done) {
       assert.equal();
 
       done();
