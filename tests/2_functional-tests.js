@@ -36,10 +36,9 @@ suite('Functional Tests', function () {
       chai
         .request(server)
         .put('/travellers')
-        .send({
-          "surname": "Colombo",
-          "name": "Cristoforo"
-        })
+        .send({"surname": 'Colombo'})
+        .send({"name": "Cristoforo"})
+        .type('application/json')
         .end(function (err, res) {
           assert.equal(res.status, 200, 'response status should be 200');
           assert.equal(res.type, 'application/json', 'Response should be json');
