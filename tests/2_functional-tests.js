@@ -32,35 +32,51 @@ suite('Functional Tests', function () {
         });
     });
     // #3
-    test('Send {name: "Cristoforo", surname: "Colombo"}', function (done) {
+    test('send {surname: "Colombo"}', function(done) {
+      // we setup the request for you...
       chai
         .request(server)
         .put('/travellers')
+        /** send {surname: 'Colombo'} here **/
         .send({ surname: 'Colombo' })
-        .end(function (err, res) {
+        // .send({...})
+        .end(function(err, res) {
+          /** your tests here **/
           assert.equal(res.status, 200, 'response status should be 200');
           assert.equal(res.type, 'application/json', 'Response should be json');
-          assert.equal(res.header['content-type'], 'application/json; charset=utf-8', 'Response should be json');
-          assert.equal(res.body.name, 'Cristoforo');
-          assert.equal(res.body.surname, 'Colombo');
-          done();
+          assert.equal(
+            res.body.name,
+            'Cristoforo',
+            'res.body.name should be "Christoforo"'
+          );
+          assert.equal(
+            res.body.surname,
+            'Colombo',
+            'res.body.surname should be "Colombo"'
+          );
+    
+          done(); // Never forget the 'done()' callback...
         });
     });
     // #4
-    test('Send {name: "Giovanni", surname: "da Verrazzano"}', function (done) {
+    test('send {surname: "da Verrazzano"}', function(done) {
+      // we setup the request for you...
       chai
         .request(server)
         .put('/travellers')
+        /** send {surname: 'Colombo'} here **/
         .send({ surname: 'da Verrazzano' })
-        .end(function (err, res) {
+        // .send({...})
+        .end(function(err, res) {
+          /** your tests here **/
           assert.equal(res.status, 200, 'response status should be 200');
           assert.equal(res.type, 'application/json', 'Response should be json');
-          assert.equal(res.header['content-type'], 'application/json; charset=utf-8', 'Response should be json');
           assert.equal(res.body.name, 'Giovanni');
           assert.equal(res.body.surname, 'da Verrazzano');
-          done();
+    
+          done(); // Never forget the 'done()' callback...
+        });
     });
-  });
 });
 
 const Browser = require('zombie');
