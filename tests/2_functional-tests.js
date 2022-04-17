@@ -36,13 +36,12 @@ suite('Functional Tests', function () {
       chai
         .request(server)
         .put('/travellers')
-        .send({
-          "surname": "Colombo",
-          "name": "Cristoforo"
+        .send({"surname": "Colombo"})
+        .send({"name": "Cristoforo"})  
         })
         .end(function (err, res) {
           assert.equal(res.status, 200, 'response status should be 200');
-          assert.equal(res.type, 'application/json', 'Response should be json');
+          assert.equal(res.type, 'application/json; charset=utf-8', 'Response should be json');
           assert.equal(res.header['content-type'], 'application/json; charset=utf-8', 'Response should be json');
           assert.equal(
             res.body.name,
@@ -62,13 +61,12 @@ suite('Functional Tests', function () {
       chai
         .request(server)
         .put('/travellers')
-        .send({
-          "surname": "da Verrazzano",
-          "name": "Giovanni"
+        .send({"surname": "da Verrazzano"})
+        .send({"name": "Giovanni"})  
         })
         .end(function (err, res) {
           assert.equal(res.status, 200, 'response status should be 200');
-          assert.equal(res.type, 'application/json', 'Response should be json');
+          assert.equal(res.type, 'application/json; charset=utf-8', 'Response should be json');
           assert.equal(res.header['content-type'], 'application/json; charset=utf-8', 'Response should be json');
           assert.equal(
             res.body.name,
