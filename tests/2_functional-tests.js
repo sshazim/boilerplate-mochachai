@@ -37,11 +37,10 @@ suite('Functional Tests', function () {
         .request(server)
         .put('/travellers')
         .send({"surname": "Colombo"})
-        .send({"name": "Cristoforo"})  
-        })
+        .send({"name": "Cristoforo"})
         .end(function (err, res) {
           assert.equal(res.status, 200, 'response status should be 200');
-          assert.equal(res.type, 'application/json; charset=utf-8', 'Response should be json');
+          assert.equal(res.type, 'application/json', 'Response should be json');
           assert.equal(res.header['content-type'], 'application/json; charset=utf-8', 'Response should be json');
           assert.equal(
             res.body.name,
@@ -62,11 +61,10 @@ suite('Functional Tests', function () {
         .request(server)
         .put('/travellers')
         .send({"surname": "da Verrazzano"})
-        .send({"name": "Giovanni"})  
-        })
+        .send({"name": "Giovanni"})
         .end(function (err, res) {
           assert.equal(res.status, 200, 'response status should be 200');
-          assert.equal(res.type, 'application/json; charset=utf-8', 'Response should be json');
+          assert.equal(res.type, 'application/json', 'Response should be json');
           assert.equal(res.header['content-type'], 'application/json; charset=utf-8', 'Response should be json');
           assert.equal(
             res.body.name,
@@ -110,4 +108,4 @@ suite('Functional Tests with Zombie.js', function () {
       done();
 
   });
-});
+});          
