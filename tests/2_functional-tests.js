@@ -38,7 +38,7 @@ suite('Functional Tests', function () {
         .request(server)
         .put('/travellers')
         /** send {surname: 'Colombo'} here **/
-        .send({ "surname": 'Colombo' })
+        .send({ surname: "Colombo" })
         // .send({...})
         .end(function(err, res) {
           /** your tests here **/
