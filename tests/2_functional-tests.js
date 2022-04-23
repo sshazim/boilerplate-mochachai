@@ -80,8 +80,15 @@ suite('Functional Tests', function () {
 });
 
 const Browser = require('zombie');
+Browser.site = 'https://boilerplate-mochachai.shazimsurmawala.repl.co';
 
 suite('Functional Tests with Zombie.js', function () {
+  const brower = new Browser();
+
+  suiteSetup(function(done){
+    return brower.visit('/', done);
+  });
+
   this.timeout(5000);
 
   suite('Headless browser', function () {
