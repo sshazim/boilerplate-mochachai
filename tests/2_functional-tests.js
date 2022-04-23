@@ -88,14 +88,13 @@ suite('Functional Tests with Zombie.js', function () {
   suiteSetup(function(done){
     return browser.visit('/', done);
   });
-
-  //this.timeout(5000);
-
-  suite('Headless browser', function () {
-    test('should have a working "site" property', function() {
-      assert.isNotNull(Browser.site);
-    });
-  });
+    this.timeout(5000);
+    
+//  suite('Headless browser', function () {
+//    test('should have a working "site" property', function() {
+//      assert.isNotNull(Browser.site);
+//    });
+//  });
 
   suite('"Famous Italian Explorers" form', function () {
     // #5
