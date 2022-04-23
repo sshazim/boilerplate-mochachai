@@ -89,24 +89,23 @@ suite('Functional Tests with Zombie.js', function () {
     return browser.visit('/', done);
   });
 
-  this.timeout(5000);
+  //this.timeout(5000);
 
   suite('Headless browser', function () {
     test('should have a working "site" property', function() {
-      assert.isNull(Browser.site);
+      assert.isNotNull(Browser.site);
     });
   });
-});
 
   suite('"Famous Italian Explorers" form', function () {
     // #5
     test('Submit the surname "Colombo" in the HTML form', function (done) {
-      browser.fill('surname', 'Polo').then(() => {
+      browser.fill('surname', 'Colombo').then(() => {
         browser.pressButton('submit', () => {
           browser.assert.success();
           browser.assert.text('span#name', 'Cristoforo');
           browser.assert.text('span#surname', 'Colombo');
-          browser.assert.text('span#dates', '1');
+          browser.assert.elements('span#dates', '1');
           done();
         });
       });
@@ -123,13 +122,13 @@ suite('Functional Tests with Zombie.js', function () {
         });
       });
     });
-  });
 
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {
       assert.equal();
 
       done();
-
+    });
+  });
   });
 });          
