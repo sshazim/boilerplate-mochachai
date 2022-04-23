@@ -73,7 +73,7 @@ suiteSetup(function(done) {
 });
   suite('"Famous Italian Explorers" form', function () {
     // #5
-    test('submit "surname" : "Colombo"- write your e2e test...', function (done) {
+    test('Submit the surname "Colombo" in the HTML form', function (done) {
       browser.fill('surname', 'Colombo').then(() => {
         browser.pressButton('submit', () => {
           browser.assert.success();
