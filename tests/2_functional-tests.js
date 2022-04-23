@@ -67,14 +67,15 @@ const Browser = require("zombie");
  
 suite("Functional Tests with Zombie.js", function () {
 const browser = new Browser();
+this.timeout(10000);
 suiteSetup(function(done) {
   return browser.visit('/', done);
 });
   suite('"Famous Italian Explorers" form', function () {
     // #5
     test('submit "surname" : "Colombo"- write your e2e test...', function (done) {
-      browser.fill('surname', 'Colombo')
-      .pressButton("submit",  ()=> {
+      browser.fill('surname', 'Colombo');
+      browser.pressButton("submit",  ()=> {
        browser.assert.success();
        browser.assert.text('span#name', 'Cristoforo');
        browser.assert.text('span#surname', 'Colombo');
@@ -86,8 +87,8 @@ suiteSetup(function(done) {
     });
       // #6
      test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
-       browser.fill('surname', 'Vespucci')
-       .pressButton("submit",  ()=> {
+       browser.fill('surname', 'Vespucci');
+       browser.pressButton("submit",  ()=> {
        browser.assert.success();
        browser.assert.text('span#name', 'Amerigo');
        browser.assert.text('span#surname', 'Vespucci');
