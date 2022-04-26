@@ -62,12 +62,11 @@ suite("Functional Tests", function () {
 });
 
 const Browser = require("zombie");
-
- Browser.site='https://boilerplate-mochachai-1.shazimsurmawala.repl.co';
+Browser.site='https://boilerplate-mochachai-1.shazimsurmawala.repl.co';
  
 suite("Functional Tests with Zombie.js", function () {
 const browser = new Browser();
-this.timeout(5000);
+this.timeout(15000);
 suiteSetup(function(done) {
   return browser.visit('/', done);
 });
