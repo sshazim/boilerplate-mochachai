@@ -83,19 +83,17 @@ suiteSetup(function(done) {
           done();
         });
       });
-         
-     
     });
       // #6
-     test('submit "surname" : "Vespucci" - write your e2e test...', function (done) {
+     test('Submit the surname "Vespucci" in the HTML form', function (done) {
        browser.fill('surname', 'Vespucci');
        browser.pressButton("submit",  ()=> {
-       browser.assert.success();
+      browser.assert.success();
        browser.assert.text('span#name', 'Amerigo');
        browser.assert.text('span#surname', 'Vespucci');
        browser.assert.element('span#dates', 1);
-      done();
+       done();
+      });
     });
-     });
   });
 });
